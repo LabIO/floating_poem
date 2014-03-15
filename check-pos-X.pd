@@ -1,4 +1,4 @@
-#N canvas 1 81 1009 418 10;
+#N canvas 1 83 1009 418 10;
 #X obj 45 24 table POSX;
 #X obj 22 65 r 1-Pos-X;
 #X obj 22 147 tabwrite POSX;
