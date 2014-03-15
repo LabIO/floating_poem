@@ -71,7 +71,7 @@
 #X connect 17 0 19 0;
 #X restore 297 452 pd CONTACAR;
 #X obj -85 456 t b b b;
-#N canvas 274 79 891 795 MOVIMENTA 1;
+#N canvas 274 79 891 795 MOVIMENTA 0;
 #X obj 627 -407 inlet;
 #X obj 372 87 outlet;
 #X obj 402 -3 sin;
@@ -92,7 +92,7 @@
 #X obj 627 -384 t b b;
 #X obj 627 -270 spigot;
 #X obj 693 -308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 138 -101 s \$1-Stop;
 #X obj 733 -367 r \$1-Stop;
 #X msg 733 -339 0;
@@ -398,7 +398,7 @@ go \; \$1-RandomState bang \; \$1-RandomPos bang \; \$1-Size bang \;
 #X obj 680 -134 + 0.03;
 #X obj 762 -156 r PONTOS;
 #X obj 309 102 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 44 1;
+-1 -1 6906 1;
 #X obj 695 11 line;
 #X obj 694 -17 pack f 200;
 #X obj 810 128 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -646,7 +646,7 @@ go \; \$1-RandomState bang \; \$1-RandomPos bang \; \$1-Size bang \;
 \$1-TextReader rewind \; \$1-TextPart bang \; \$1-TextReader go bang
 \; \$1-Start bang \; \$1-RandomState bang \; \$1-RandomPos bang \;
 \$1-Debug 0 \;;
-#X obj 375 220 random 43;
+#X obj 375 220 random 44;
 #X connect 0 0 37 1;
 #X connect 1 0 5 0;
 #X connect 1 0 21 1;
