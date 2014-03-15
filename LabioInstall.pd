@@ -1,10 +1,10 @@
-#N canvas 601 87 739 731 10;
+#N canvas 599 88 739 731 10;
 #X obj 582 130 gemwin;
 #X msg 601 86 destroy;
 #X obj 481 221 s init;
 #X obj 481 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 666 280 671 564 MOVIMENTO 0;
+#N canvas 662 282 671 564 MOVIMENTO 1;
 #X obj 90 59 pix_video;
 #X obj 90 92 pix_rgba;
 #X obj 98 168 pix_flip;
@@ -20,13 +20,13 @@
 #X obj 229 542 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj -22 624 s X-BlobPos;
-#X obj 108 525 s Y-BlobPos;
+#X obj 145 641 s Y-BlobPos;
 #X floatatom 390 177 5 0 0 0 - - -;
 #X floatatom 543 328 5 0 0 0 - - -;
 #X obj 367 57 r X-BlobPos;
 #X obj 403 77 r Y-BlobPos;
 #X floatatom 190 211 5 0 0 0 - - -;
-#X obj 149 604 line 0 40;
+#X obj 145 585 line 0 40;
 #X obj 145 558 pack 0 100;
 #X obj 35 565 line 0 40;
 #X obj 35 537 pack 0 100;
@@ -53,7 +53,7 @@
 #X obj -3 283 pix_separator;
 #X obj 94 212 pix_separator;
 #X floatatom 79 605 5 0 0 0 - - -;
-#X floatatom 185 625 5 0 0 0 - - -;
+#X floatatom 161 617 5 0 0 0 - - -;
 #X obj 332 30 gemhead 15;
 #X obj 332 108 translateXYZ 0 0 1.1;
 #X floatatom 444 145 5 0 0 0 - - -;
@@ -142,7 +142,7 @@
 1;
 #X text 502 255 Debug;
 #X obj 575 284 s MasterColSw;
-#X obj 575 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 575 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 73 468 s;
 #X floatatom 88 412 5 1 30 0 - - -;
@@ -261,7 +261,7 @@
 #X connect 51 0 17 0;
 #X restore 25 340 pd TESTES;
 #X obj 40 82 BLOCO 1;
-#N canvas 445 139 971 726 PONTOS 0;
+#N canvas 443 140 971 726 PONTOS 0;
 #X obj 465 499 list-compare;
 #X obj 21 310 table Pontos;
 #X obj 374 270 tabread Pontos;
@@ -276,8 +276,8 @@
 #X msg 534 461 list 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1;
 #X floatatom 330 590 5 0 0 0 - - -;
-#X msg 465 401 list 0 0 0 0 0 1 1 1 0 0 0 1 1 1 0 1 1 1 0 0 0 0 1 1
-1 1 0 0 0 0;
+#X msg 465 401 list 1 1 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 0 0
+0 1 1 1 0 1;
 #X obj 341 237 sel 30;
 #X obj 384 182 uzi 31;
 #X obj 401 39 r ChekaPontos;
@@ -301,7 +301,7 @@
 #X obj 268 626 s PONTOS;
 #X obj 137 537 r init;
 #X msg 162 569 0;
-#X obj 492 609 delay 10000;
+#X obj 492 609 delay 9000;
 #X connect 0 0 11 0;
 #X connect 0 0 23 0;
 #X connect 2 0 3 0;
@@ -342,7 +342,7 @@
 #X connect 34 0 26 0;
 #X connect 35 0 22 0;
 #X restore 483 319 pd PONTOS;
-#N canvas 391 81 765 791 VIDEOBACK 1;
+#N canvas 389 82 765 791 VIDEOBACK 0;
 #X obj -12 515 pix_texture;
 #X obj 126 -148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
@@ -487,7 +487,7 @@
 #X restore 579 324 pd VIDEOBACK;
 #X text 487 497 FLOATING POEM labIO - 11 Fev 2014;
 #X obj 483 353 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 35
--262144 -1 -1 0 256;
+-262144 -1 -1 15 256;
 #X floatatom 377 -138 5 0 0 0 - - -;
 #X obj 451 -163 key;
 #X obj 448 -114 spigot;
@@ -496,11 +496,15 @@
 #X obj 449 -80 sel 97 115;
 #X msg 361 43 dimen 640 480 \, FSAA 7 \, fps 30 \, fullscreen 0 \,
 create \, 1;
-#X obj 537 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 537 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 519 154 r MasterColSw;
 #X msg 114 -15 reset \, dimen 720 480 \, FSAA 7 \, fps 30 \, offset
 1592 144 \, border 1 \, create \, 1;
+#N canvas 326 194 147 185 POSITIONS 0;
+#X obj -9 21 check-pos-X;
+#X obj -3 63 check-pos-Y;
+#X restore 223 371 pd POSITIONS;
 #X obj 99 157 BLOCO 11;
 #X obj 179 157 BLOCO 18;
 #X obj 252 182 BLOCO 26;
@@ -530,10 +534,6 @@ create \, 1;
 #X obj 254 236 BLOCO 28;
 #X obj 326 82 BLOCO 29;
 #X obj 331 109 BLOCO 30;
-#N canvas 328 165 147 185 POSITIONS 0;
-#X obj -9 21 check-pos-X;
-#X obj -3 63 check-pos-Y;
-#X restore 223 371 pd POSITIONS;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;
